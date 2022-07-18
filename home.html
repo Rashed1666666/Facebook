@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/fa.js"></script>
+    <!-- <link rel="stylesheet" href="css/fa.css"> -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <section id="main_container">
+        <aside>
+            <div>
+                <div id="div_personal_sec">
+                    <img id="img_personal" class="img-personal"><span id="span_name">Mohamed G. Yaseen</span>
+                </div>
+
+                <div id="div_aside_sections">
+                    <div>
+                        <img class="aside_sec_img" src='icons/3.png'>
+                        <span class="aside_sec_name">Friends</span>
+                    </div>
+                    <div>
+                        <img class="aside_sec_img" src='icons/5.png'>
+                        <span class="aside_sec_name">Memories</span>
+                    </div>
+                    <div>
+                        <img class="aside_sec_img" src='icons/7.png'>
+                        <span class="aside_sec_name">Pages</span>
+                    </div>
+                    <div>
+                        <img class="aside_sec_img" src='icons/9.png'>
+                        <span class="aside_sec_name">Recent ad activity</span>
+                    </div>
+                    <div>
+                        <img class="aside_sec_img" src='icons/10.png'>
+                        <span class="aside_sec_name">Saved</span>
+                    </div>
+                    <div>
+                        <img class="aside_sec_img" src='icons/15.png'>
+                        <span class="aside_sec_name">Fundraisers</span>
+                    </div>
+                    <div>
+                        <img class="aside_sec_img" src='icons/13.png'>
+                        <span class="aside_sec_name">Facebook Pay</span>
+                    </div>
+                    <div>
+                        <img class="aside_sec_img" src='icons/14.png'>
+                        <span class="aside_sec_name">Favourites</span>
+                    </div>
+                    <!-- <div>
+                    <img class="aside_sec_img" src='icons/10.png'>
+                    <span class="aside_sec_name">Groups</span>
+                </div>
+                <div>
+                    <img class="aside_sec_img" src='icons/16.png'>
+                    <span class="aside_sec_name">Groups</span>
+                </div>
+                <div>
+                    <img class="aside_sec_img" src='icons/1.png'>
+                    <span class="aside_sec_name">Groups</span>
+                </div>
+                <div>
+                    <img class="aside_sec_img" src='icons/2.png'>
+                    <span class="aside_sec_name">Groups</span>
+                </div>
+                <div>
+                    <img class="aside_sec_img" src='icons/17.png'>
+                    <span class="aside_sec_name">Groups</span>
+                </div>
+                <div>
+                    <img class="aside_sec_img" src='icons/18.png'>
+                    <span class="aside_sec_name">Groups</span>
+                </div> -->
+                    <!-- duplicate on the same structure for other options -->
+                </div>
+
+                <div><i class="fas fa-angle-down i-aside-see-more"></i><span class="aside_sec_name">See more</span>
+                </div>
+            </div>
+        </aside>
+
+
+        <section>
+            <div id="div_card_new_post">
+                <div id="div_new_post">
+                    <img id="img_personal" class='img-personal'>
+                    <textarea type="text" placeholder="What's on your mind, Mohamed?" id="in_new_post_starter" rows="1"
+                        style="resize: none;"></textarea>
+                </div>
+
+                <hr>
+
+                <div id="btns_under_new_post">
+                    <!-- TODO change these pics to original if there is time -->
+                    <span><i class="fas fa-video"> </i> <span>video</span></span>
+                    <span><i class="fas fa-images"></i> <span>Photo/video</span></span>
+                    <span><i class="fas fa-face-laugh-wink"> </i><span>Feeling/Activity</span></span>
+                </div>
+            </div>
+
+            <div id="div_card_rooms">
+                <!-- TODO add videos img to this btn -->
+                <span id="btn_create_room"><i class="fas fa-video"> </i> Create Room</span>
+                <i class="fas fa-angle-right" id="i_create_room_forward"></i>
+                <!-- TODO create spans for users programatically when you have friends -->
+            </div>
+
+            <!-- TODO make a card for standard post with img and caption -->
+
+            <!-- ----------------------- POST ------------------------ -->
+
+            <div class="div-card-post">
+                <div id="div_post_head">
+                    <img id="img_post_creator" src="Resources/profile3.jpg">
+                    <span>
+                        <h4 id="h4_post_creator_name">Samar Gaber</h4>
+                        <span>6 September 2021 .
+                            <i class="fa-solid fa-user-group fa-xs" id="i_post_publicity_state"></i>
+                        </span>
+                    </span>
+                    <i class="fas fa-ellipsis" id="i_post_options"></i>
+                </div>
+
+                <p id="p_post_caption">Started from the bottom up to the infinity <span
+                        class="hashtag">#special-one-morinho</span> </p>
+                <img id="img_post_content" src="Resources/morinho.jpg">
+
+                <div id="div_post_interactions_counters">
+                    <span id="span_top_interactions_icons">
+                        <img src="icons/react (1).svg">
+                        <img src="icons/react (2).svg">
+                        <img src="icons/react (4).svg">
+                        <span id="span_post_interactions_counter">34</span>
+                    </span>
+                    <span id="span_comments_counter">1 comments</span>
+                </div>
+
+                <hr style="margin-bottom: 2px;">
+
+                <div id="div_post_interactions">
+                    <label id="l_post_react" for="checkbox_like">
+                        <input type="checkbox" id="checkbox_like">
+                        <i class="fa-regular fa-thumbs-up" id="i_post_react"></i>
+                        <p id="p_post_like_word">Like</p>
+                    </label>
+                    <span id="span_post_comment" onclick="document.getElementById('in_comment').focus()"><i
+                            class="fa-regular fa-message" id="i_post_comment"></i> Comment</span>
+                    <span id="span_post_share"><i class="fas fa-share" id="i_post_share"></i> Share</span>
+                </div>
+
+                <hr style="margin-top: 2px;">
+
+
+                <div class="comment">
+                    <img src="Resources/profile.jpg" id="img_comment_creator">
+                    <div>
+                        <div class="c-container">
+                            <h4>Mohamed G. Yaseen</h4>
+                            <!-- TODO make hashtag detector with js -->
+                            <p>Yes, he is "one of" the greatest but not "the greatest" as he always claimed</p>
+                            <img class="img-comment">
+                        </div>
+                        <span>
+                            <label for="checkbox_comment_like" class="l-like-comment">
+                                <input type='checkbox' id='checkbox_comment_like'>
+                                <p>Like</p>
+                            </label>
+                            <p class="reply-comment">Reply</p>
+                            <p class="date-comment">16 w</p>
+                        </span>
+                        <span class="reactions-on-comment">
+                            <img src="icons/react (2).svg">
+                            <img src="icons/react (1).svg">
+                            <img src="icons/react (3).svg">
+                            <p class="most-reaction-counter">12</p>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div id="div_write_comment">
+                    <img id="img_personal" class='img-personal'>
+
+                    <label for="in_comment" id="l_write_comment">
+                        <textarea type="text" placeholder="Write a comment" id="in_comment" rows="1"></textarea>
+
+                        <span id="span_btns_in_comment" style="position: absolute; bottom: 4px; right: 4px;">
+                            <i class="fab fa-pied-piper-square"></i>
+                            <i class="fab fa-modx"></i>
+                            <!-- TODO show the image under the commentline -->
+                            <label for="in_img_comment">
+                                <input type="file" id="in_img_comment" style="display: none;">
+                                <i class="fas fa-camera"></i></label>
+                            <i class="fas fa-face-laugh-wink"></i>
+                        </span>
+                    </label>
+                    <span id="span_comment_img">
+                        <img class="in-comment-img" src="Resources/comment.jpg">
+                        <i class="fas fa-xmark"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div id="div_no_more_posts">
+                <div>
+                    <h1>No more posts</h1>
+                    <h2>Add more friends to see more posts in your News Feed.</h2>
+                    <button id="btn_find_friends">Find Friends</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ------------------------ ADS and friends chat bar --------------------- -->
+        <!-- TODO this part could be added later on -->
+        <aside></aside>
+    </section>
+
+    <!-- ------------------------ Modal ----------------------------- -->
+
+    <div id="div_modal">
+        <div id="div_modal_header">
+            <h1>Create post</h1>
+            <i class="fas fa-x" onclick="showOrHideNewPostCard()"></i>
+        </div>
+        <hr>
+        <div id="div_modal_user_info_and_publicity">
+            <img id="img_user_modal" src="Resources/profile3.jpg">
+            <div id="div_u_p">
+                <h3 id="h3_user_name"></h3>
+                <button>
+                    <i class="fa-solid fa-user-group fa-xs"></i>
+                    <p>Friends</p>
+                    <i class="fa-solid fa-caret-down fa-xs"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="div_post_content">
+            <textarea id="in_new_post_content" rows="3" placeholder="What's in your mind, Mohamed?"></textarea>
+
+            <div id="div_new_post_img">
+                <img id="img_chosen" src=''/>
+                <i class="fas fa-x" onclick="removeFile(event)"></i>
+            </div>
+        </div>
+
+        <div id="div_add_photo">
+            <p>Add to your post</p>
+
+            <a style="color: #606770;" href="#">
+                <i class="fa-solid fa-ellipsis fa-lg"></i>
+            </a>
+
+            <a style="color: #f5533d;" href="#">
+                <i class="fa-solid fa-location-dot fa-lg"></i>
+            </a>
+            <a style="color: #f7b928;" href="#">
+                <i class="fa-solid fa-face-smile fa-lg"></i>
+            </a>
+            <a style="color: #1877f2;" href="#">
+                <i class="fa-solid fa-user-tag fa-lg"></i>
+            </a>
+            <label style="color: #45bd62;" for="in_img_new_post">
+                <input type="file" id="in_img_new_post" name="img" accept="image/*" onchange="loadFile(event)" multiple>
+                <i class="fa-solid fa-photo-film fa-lg"></i>
+            </label>
+        </div>
+        <button id="btn_confirm_post" disabled>Post</button>
+    </div>
+    <div id="overlay" onclick="showOrHideNewPostCard()"></div>
+
+    <script src='js/home.js'></script>
+</body>
+
+</html>

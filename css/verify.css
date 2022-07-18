@@ -1,0 +1,179 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #e1e2e6;
+}
+
+
+/* --------------------------- Header ---------------------- */
+
+header {
+  background-color: #f6f6f6;
+  /* box-shadow: 1px 1px 5px #cfcfd1; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+header img {
+  width: 44px;
+  font-size: 44px;
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+header #i_arrow_down{
+    float: right;
+    margin: 10px 40px;
+    background-color: #39393912;
+    padding: 14px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+header #i_arrow_down:hover{
+    background-color: #3939392f;
+}
+
+
+/* -------------------------- Middle Section -------------------------- */
+
+section {
+  pointer-events: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  display: inline-block;
+  width: 36%;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Helvetica, sans-serif;
+}
+section *{
+  pointer-events: auto;
+}
+section h1 {
+  margin: 20px 14px;
+  font-size: 18px;
+}
+
+
+section hr {
+    border-top: 1px solid #dadde1;
+}
+
+
+section p {
+  font-size: 14px;
+  margin: 14px 14px 26px;
+}
+#span_user_email{
+  font-weight: 500;
+  color: black;
+}
+
+
+/* Verification Code input */
+section label {
+  margin: 0px 14px 10px 14px;
+  border: 1px solid #dbdbdb;
+  padding: 16px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #989da2;
+  font-weight: 500;
+}
+section label input {
+  width: 100px;
+  border: 0px;
+  outline-style: none;
+  -moz-appearance: textfield;
+}
+/* remove increasing & decreasing buttons in input type='number' */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section p:last-of-type {
+  margin-top: 30px;
+  color: #1465cf;
+  cursor: pointer;
+  display: inline-block;
+}
+section p:last-of-type:hover {
+  text-decoration: underline;
+}
+section p #span_timer_resend {
+  font-weight: 700;
+  color: black;
+  margin-left: 10px;
+}
+
+
+
+section div {
+  padding: 4px 16px 10px;
+  float: right;
+}
+section div button {
+  padding: 12px 40px;
+  border-width: 0px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+section div button:first-child {
+  color: #b4b6b7;
+  background-color: #e9e9ec;
+  margin-right: 6px;
+}
+section div button:first-child:active {
+  background-color: #e2e2e6;
+}
+section div button:last-child {
+  color: white;
+  background-color: #005ddf;
+}
+section div button:last-child:hover {
+  background-color: #166fe5;
+}
+section div button:last-child:active {
+  background-color: rgb(18, 88, 180);
+}
+
+
+/* ---------- floating div list ------------ */
+#div_floating_list{
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1,.2);
+  transition-duration: .05s;
+  position: absolute;
+  top: 62px;
+  right: 38px;
+  border-radius: 8px;
+  z-index: 1;
+  background-color: white;
+  padding: 9px 1px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#div_floating_list span{
+  cursor: pointer;
+  padding: 8px 20px;
+  color: #9596a4;
+  border-radius: 8px;
+}
+#div_floating_list span:hover{
+  background-color: rgba(75, 75, 75, 0.061);
+}
+#div_floating_list span:active{
+  background-color: rgba(31, 31, 31, 0.061);
+}
+#div_floating_list span i{
+  margin-right: 8px;
+  color: #9596a4;
+  transform: rotate(180deg);
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Resources/logo.png">
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/signup.css" rel="stylesheet">
+    <script src="js/fa.js"></script>
+    <title>Facebook - log in or sign up</title>
+</head>
+
+<body>
+    <div id="div_main_content">
+        <div id="div_facebook">
+            <img src="Resources/facebook_logo.png" alt="facebook_logo">
+            <h2>Facebook helps you connect and share with the people in your life.</h2>
+        </div>
+
+        <div id="div_login">
+            <div id="div_login_card">
+                <input type="text" id="in_email_phone_login" placeholder="Email address or phone number">
+                <input type="password" id="in_password_login" placeholder="Password">
+                <input type="button" id="btn_login" value="Log In" onclick="loginUser()">
+                <!-- TODO add href url to this line  -->
+                <a href="#">Forgotten password?</a>
+                <hr>
+                <input type="button" id="btn_new_account" value="Create New Account" onclick="showOrHideSignUpCard()">
+            </div>
+            <!-- TODO add href url to this line  -->
+            <p id="p_create_page"><a href="#" >Create a Page</a> for a celebrity, brand or business.</p>
+
+        </div>
+    </div>
+
+
+    <div id="div_footer">
+        <ul>
+            <li>
+                English (UK)
+            </li>
+            <li>
+                <a href="#">العربية</a>
+            </li>
+            <li>
+                <a href="#">Français (France)</a>
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Messenger</a></li>
+            <li><a href="#">Terms</a></li>
+        </ul>
+        <p>Meta @ 2022</p>
+    </div>
+
+
+    <!-- ------------------------------------ Sign Up Modal ----------------------------- -->
+
+    
+    <div id="div_sign_up_card">
+
+        <!-- Title -->
+
+        <div id="div_title">
+            <img src="Resources/ic_close.png" id="btn_close" onclick="showOrHideSignUpCard()">
+            <h1>Sign Up</h1>
+            <p>It's quick and easy</p>
+        </div>
+
+        <hr>
+
+        <!-- Basic Data Section  -->
+
+        <div id="div_sign_up_form">
+
+            <!-- Name  -->
+
+            <div id="div_names">
+                <input type="text" placeholder="First name" id="in_first_name">
+                <i class="fa fa-exclamation-circle error-sign i-error" aria-hidden="true" id="i_error_first_name"></i>
+                <input type="text" placeholder="Surname" id="in_surname">
+                <i class="fa fa-exclamation-circle error-sign i-error" aria-hidden="true" id="i_error_surname"></i>
+            </div>
+
+            <!-- Email & Password  -->
+
+            <input type="text" placeholder="Mobile number or email address" id="in_email_phone"
+                onkeyup="checkEmailInput(event)">
+            <i class="fa fa-exclamation-circle error-sign i-error" aria-hidden="true" id="i_error_email_phone"></i>
+            <input type="text" placeholder="Re-enter email address" id="in_re_email_phone">
+            <i class="fa fa-exclamation-circle error-sign i-error" aria-hidden="true" id="i_error_re_email_phone"></i>
+
+            <input type="password" placeholder="New password" id="in_password">
+            <i class="fa fa-exclamation-circle error-sign i-error" aria-hidden="true" id="i_error_password"></i>
+
+
+            <!-- Birth Date  -->
+
+            <div id="tiny_container">
+                <p style="display: inline-block;">Date of birth <i class="fa fa-question-circle" aria-hidden="true"
+                        title="Click for more information"></i></p>
+                <i class="fa fa-exclamation-circle error-sign i-error" aria-hidden="true" id="i_error_birth_date"></i>
+            </div>
+            <div id="div_birth_date">
+                <select id="sel_day"></select>
+                <select id="sel_month"></select>
+                <select id="sel_year"></select>
+            </div>
+
+            <!-- Gender  -->
+
+            <p>Gender <i class="fa fa-question-circle" aria-hidden="true" title="Click for more information"></i></p>
+            <div>
+                <label for="female">Female <input type="radio" name="gender" id="female"></label>
+                <label for="male">Male<input type="radio" name="gender" id="male"></label>
+                <label for="custom">Custom <input type="radio" name="gender" id="custom"></label>
+            </div>
+            <div id="div_hidden_custom_gender">
+                <select style="display: inline-block;">
+                    <option style="display:none">Select your pronoun</option>
+                    <option>She: "Wish him a happy birthday!"</option>
+                    <option>He: "Wish him a happy birthday!"</option>
+                    <option>They: "Wish him a happy birthday!"</option>
+                </select>
+
+                <p>Your pronoun is visible to everyone.</p>
+                <input type="text" placeholder="Gender (optional)" id="in_gender_opt">
+            </div>
+
+
+            <!-- Ending -->
+
+            <p id="p_ending">By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data
+                    Policy</a> and <a href="#">Cookie Policy</a>. You may receive SMS notifications from us and can
+                opt out at any
+                time.</p>
+            <input type="button" value="Sign Up" id="btn_sign_up" onclick="">
+        </div>
+    </div>
+
+    <div id="overlay" onclick="showOrHideSignUpCard()"></div>
+    
+    <script src="js/login.js"></script>
+    <script src="js/sign_up.js"></script>
+</body>
+
+</html>

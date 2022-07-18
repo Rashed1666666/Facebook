@@ -1,0 +1,226 @@
+* {
+  font-family: Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+#overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fcfcfdaf;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#div_sign_up_card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  max-width: 432px;
+  background-color: white;
+  border-radius: 12px;
+  padding-bottom: 20px;
+  position: fixed;
+  
+  pointer-events: none;
+  opacity: 0;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  z-index: 2;
+}
+
+.popUp {
+  transform: scale(1);
+  transition-duration: 2s;
+}
+.popOut {
+  transform: scale(0);
+  transition-duration: 2s;
+}
+
+#div_title {
+  padding: 10px 16px;
+}
+#div_title h1 {
+  color: #1c1e21;
+  margin: 0px;
+}
+#div_title #btn_close {
+  float: right;
+  cursor: pointer;
+}
+#div_title #btn_close:active {
+  filter: brightness(0);
+}
+#div_title p {
+  color: #606770;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+#div_sign_up_card hr {
+  border-top: 1px solid #dadde1;
+}
+
+/* -------------- div_sign_up_form ------------ */
+
+#div_sign_up_form {
+  background-color: white;
+  position: relative;
+  padding-left: 20px;
+  margin: 0px;
+}
+
+/* ! error mark  */
+.error-sign {
+  color: #b94a48;
+  transform: translateX(-24px) translateY(-5px) scale(8);
+  font-size: 2px;
+}
+.i-error {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#div_sign_up_form input::placeholder {
+  color: #8d949e;
+}
+#div_sign_up_form input:focus::placeholder {
+  color: #c6cad0;
+}
+#in_first_name,
+#in_surname,
+#in_email_phone,
+#in_password,
+#in_re_email_phone,
+#in_gender_opt {
+  padding: 11px;
+  width: 40%;
+  outline-width: 0px;
+  margin-top: 10px;
+  border-radius: 6px;
+  outline: 1px solid #ccd0d5;
+  background-color: #f5f6f7;
+  border-width: 0px;
+}
+#in_first_name:focus {
+  outline: 1px solid #ccd0d5;
+}
+#in_email_phone,
+#in_password,
+#in_re_email_phone {
+  margin-top: 10px 0px 0px 0px;
+  width: 88%;
+  display: inline-block;
+}
+#in_re_email_phone {
+  display: none;
+}
+
+/* ------------ Date of birth -------------- */
+#tiny_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+#div_sign_up_form p {
+  font-size: 12px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+/* ? in circle mark  */
+i {
+  color: #70767e;
+  font-size: 12px;
+  cursor: pointer;
+}
+#i_error_birth_date {
+  margin-top: 6px;
+}
+
+#div_birth_date select {
+  border: 1px solid #ccd0d5;
+  border-radius: 4px;
+  padding: 10px 4px;
+  background-color: white;
+  min-width: 28.8%;
+  margin-right: 10px;
+}
+
+/* -------------- Gender ----------------- */
+#div_sign_up_form div label {
+  display: inline-block;
+  border: 1px solid #ccd0d5;
+  padding: 10px 2px 10px 10px;
+  width: 26%;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+#div_sign_up_form div label input {
+  float: right;
+  margin: 2px 6px 0px;
+}
+
+/* ------------- ending & btn --------------- */
+#p_ending {
+  font-size: 11px;
+  margin: 11px 0px;
+  color: #777777;
+}
+#p_ending a {
+  text-decoration: none;
+}
+#p_ending a:hover {
+  text-decoration: underline;
+}
+#btn_sign_up {
+  background-color: #00a400;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  padding: 9px 60px;
+  border-width: 0px;
+  border-radius: 6px;
+  margin: 30px auto 20px;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  transition: transform 0.5s;
+}
+#btn_sign_up:active {
+  background: linear-gradient(to bottom, #78b26b, #5e8b52);
+  transform: translateY(6px);
+  transition-duration: transform 0.5s;
+}
+#btn_sign_up:hover {
+  background: linear-gradient(to bottom, #78b26b, #5e8b52);
+}
+
+/* ---------------- Optional Section ------------- */
+#div_hidden_custom_gender {
+  margin-top: 14px;
+  display: none;
+}
+#div_hidden_custom_gender select {
+  border: 1px solid #ccd0d5;
+  border-radius: 4px;
+  padding: 10px 4px;
+  background-color: white;
+  min-width: 28.8%;
+  margin-right: 10px;
+  width: 93.5%;
+  display: block;
+}
+#div_hidden_custom_gender p {
+  margin-top: 4px;
+  color: #606770;
+}
+#in_gender_opt {
+  width: 88%;
+}

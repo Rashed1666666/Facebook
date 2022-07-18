@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Resources/logo.png">
+    <title>Verification</title>
+    <link rel="stylesheet" href="css/verify.css">
+    <script src="js/fa.js"></script>
+</head>
+
+<body>
+    <header>
+        <i class="fas fa-caret-down" id="i_arrow_down"></i>
+        <a href=""><img src="Resources/logo.png"></a>
+    </header>
+    <section>
+        <h1>Enter the code from your email</h1>
+        <hr>
+        <p>Let us know that this email address belongs to you. Enter the code from the email sent
+            to <span id="span_user_email"></span></p>
+
+        <!-- TODO make the input here only 6 digits long -->
+        <label for="in_verify_code">FB- <input type="number" id="in_verify_code"></label><br>
+
+        <p id="p_send_again">Send Email Again <span id="span_timer_resend"></span></p>
+        <hr>
+        <div>
+            <button id="btn_update_contact">Update Contact Info</button>
+            <button id="btn_continue">Continue</button>
+        </div>
+    </section>
+
+    <div id="div_floating_list">
+        <span><i class="fas fa-right-from-bracket"></i> Logout</span>
+    </div>
+
+    <script>
+        // Get Email to show in Paragraph
+        document.getElementById("span_user_email").value = document.cookie.email;
+
+        document.getElementById('in_verify_code').addEventListener('click', function () {
+            document.getElementById('in_verify_code').focus()
+        })
+
+        //Button Resend Code
+        let btnSendAgain = document.getElementById('p_send_again');
+        btnSendAgain.addEventListener('click', () => {
+            let listenersID = changeBtnState(btnSendAgain, 'none', 'grey', 'none')
+            let timerResend = document.getElementById('span_timer_resend')
+            let t = 59;
+            let timerIntervalID = setInterval(function () {
+                if (t > 0) {
+                    timerResend.innerHTML = t;
+                    t--;
+                } else {
+                    timerResend.innerHTML = '';
+                    listenersID = changeBtnState(btnSendAgain, 'underline', '#1465cf', 'auto')
+                    clearInterval(timerIntervalID)
+                }
+            }, 1000)
+        })
+
+        function changeBtnState(targetElement, decoration, color, pointerEvent) {
+            targetElement.style.color = color;
+            targetElement.style.pointerEvents = pointerEvent;
+            let decor = targetElement.addEventListener('mouseover', function () {
+                targetElement.style.textDecoration = decoration
+            })
+            let decorX = targetElement.addEventListener('mouseout', function () {
+                targetElement.style.textDecoration = 'none'
+            })
+            return [decor, decorX]
+        }
+
+        //Verification Code 
+        let codeEntered = document.getElementById('in_verify_code')
+
+        //TODO e still can be written as e is an arthematric symbol
+        // To make sure that verification code never passes 6 digits long ( TODO Find an easier solution when back online)
+        codeEntered.addEventListener('input', function (e) {
+            if (eval(codeEntered.value) > 999999) codeEntered.value = Math.floor(eval(codeEntered.value) / 10)
+        })
+
+        // When Continue Button Pressedp
+        document.getElementById("btn_continue").addEventListener('click', () => {
+            //Check if the verification code is correct (Just use any 6 digits at the time)
+            if (eval(codeEntered.value) / 1000000 < 1) {
+                let userIndex = getCookie('userIndex')
+                let users = JSON.parse(localStorage.getItem('users'))
+                users[userIndex].verified = true
+                localStorage.setItem('users', JSON.stringify(users))
+
+                window.location.replace('main_frame.html')
+            }
+            else alert('code is incorrect') //TODO make error box for it (Optional)
+        })
+
+        //To Get Data from Cookies
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //Arrow Down List 
+        let floatingList = document.getElementById('div_floating_list')
+        document.getElementById('i_arrow_down').addEventListener('click', function () {
+            if (floatingList.style.opacity == '0') {
+                floatingList.style.transform = 'scale(1)'
+                floatingList.style.opacity = '1'
+                floatingList.style.pointerEvents = 'auto'
+            } else {
+                floatingList.style.transform = 'scale(1,.2)'
+                floatingList.style.opacity = '0'
+                floatingList.style.pointerEvents = 'none'
+            }
+        })
+        floatingList.addEventListener('click', () => open('login.html', '_self'))
+    </script>
+</body>
+
+</html>

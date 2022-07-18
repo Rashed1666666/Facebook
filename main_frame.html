@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Resources/logo.png">
+    <title>Facebook</title>
+    <link rel="stylesheet" href="css/main_frame.css">
+    <!-- <link rel="stylesheet" href="css/fa.css"> -->
+    <script src="js/fa.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div id="div_nav_left">
+            <img src="Resources/ic_logo.png" id="i_logo">
+            <span id="span_search">
+                <i class="fas fa-magnifying-glass" id="i_search"></i>
+                <input type="text" placeholder="Search Facebook" id="in_search">
+            </span>
+        </div>
+
+        <div id="div_nav_middle">
+            <label><input type='radio' name='secNavMiddle' checked><img> </label>
+            <label><input type='radio' name='secNavMiddle'><img> </label>
+            <label><input type='radio' name='secNavMiddle'><img> </label>
+            <label><input type='radio' name='secNavMiddle'><img> </label>
+            <label><input type='radio' name='secNavMiddle'><img> </label>
+        </div>
+
+        <div id="div_nav_right">
+            <label><input type='radio' name='secNavRight'><img
+                    src="Resources/personal_img.png"><span>Mohamed</span></label>
+            <!-- TODO edit this icon to Menu icon -->
+            <label><input type='radio' name='secNavRight'><i class="fas fa-plus" id="i_create"></i></label>
+            <label><input type='radio' name='secNavRight'><i class="fab fa-facebook-messenger"
+                    id="i_messenger"></i></label>
+            <label><input type='radio' name='secNavRight'><i class="fas fa-bell" id="i_notifications"></i></label>
+            <label id="l_arrow_down"><input type='radio' name='secNavRight'><i class="fas fa-sort-down"
+                    id="i_arrow_down"></i></label>
+        </div>
+    </nav>
+
+    <aside>
+        <ul>
+            <li id="li_chats_head_options"><span id="span_close_all_chats">Close all chats</span><i class='fas fa-ellipsis'></i></li>
+            <li><span>Mohamed Gamal</span><img src="Resources/personal_img.png" usemap="#chatHeadMap">
+                <map name="chatHeadMap">
+                  <area id='area_close_head' shape="rect" coords="28,0,48,18" onclick="//TODO Close chat head">
+                </map>
+            </li>
+            <li><img id="img_write_to"></li>
+        </ul>
+    </aside>
+
+    <section id="sec_drop_down"><iframe id="iframe_drop_down"></iframe></section>
+
+    <iframe src="home.html" frameborder="0" id="iframe_pages"></iframe>
+
+    <script src="js/main_frame.js"></script>
+</body>
+
+</html>

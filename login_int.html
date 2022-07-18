@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Resources/logo.png">
+    <link rel="stylesheet" href="css/login_int.css">
+    <script src="js/fa.js"></script>
+    <title>Log in to Facebook</title>
+</head>
+
+<body>
+    <div id="div_main_content">
+
+        <div id="div_login">
+            <img src="Resources/facebook_logo.png" alt="facebook_logo">
+
+            <div id="div_login_card">
+
+                <h2>Log in to Facebook.</h2>
+                <div id="div_error_msg">
+                    <h4>Wrong Credentials</h4>
+                    <p>Invalid username or password</p>
+                </div>
+                <input type="text" id="in_email_phone_login" placeholder="Email address or phone number">
+                <input type="password" id="in_password_login" placeholder="Password">
+                <input type="button" id="btn_login" value="Log In" onclick="loginUser()">
+                <!-- TODO add href url to this line  -->
+                <a href="#">Forgotten password?</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="div_footer">
+        <ul>
+            <li>
+                English (UK)
+            </li>
+            <li>
+                <a href="#">العربية</a>
+            </li>
+            <li>
+                <a href="#">Français (France)</a>
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Messenger</a></li>
+            <li><a href="#">Terms</a></li>
+        </ul>
+        <p>Meta @ 2022</p>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

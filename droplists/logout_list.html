@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/fa.js"></script>
+    <title>logout list</title>
+    <style>
+        section {
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        section div {
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            font-family: Helvetica, sans-serif;
+            width: 100%;
+            background-color: white;
+        }
+
+        section div:hover {
+            background-color: #f2f2f2;
+
+        }
+
+        section div .fa-angle-right {
+            float: right;
+            margin-top: 18px;
+            margin-right: 12px;
+            font-size: 24px;
+            color: #585858;
+        }
+
+        section div * {
+            display: inline-block;
+        }
+
+        #span_logout_1 {
+            display: flex;
+            padding: 6px 0px 6px 0px;
+        }
+
+        #span_logout_1 img {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-left: 7px;
+            border-radius: 50%;
+        }
+
+        #span_logout_1 span,
+        #span_logout_2 span {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        #span_logout_1 span *,
+        #span_logout_2 span * {
+            margin: 0px;
+        }
+
+        #span_logout_2 i:first-of-type {
+            transform: translateY(10px);
+        }
+
+        #span_logout_1 span h4,
+        #span_logout_2 span h4 {
+            margin: 0px 0px 5px 0px;
+        }
+
+        #span_logout_4 i:first-of-type {
+            padding: 9px 13px;
+        }
+
+        p,
+        a {
+            font-family: Helvetica, sans-serif;
+            text-decoration: none;
+            color: #737373;
+            font-size: 12px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        div>i:first-of-type {
+            position: relative;
+            background-color: #e4e6eb;
+            color: #050505;
+            border-radius: 50%;
+            padding: 9px;
+            font-size: 20px;
+            margin-left: 4px;
+            margin-right: 10px;
+        }
+
+        hr {
+            margin-left: 5px;
+            margin-right: 5px;
+            border-top: 1px solid #ebecee;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="span_logout_1">
+            <img src="../Resources/profile.jpg">
+            <span>
+                <h4>Mohamed G. Yaseen</h4>
+                <p>See your profile</p>
+            </span>
+        </div>
+
+        <hr>
+
+        <div id="span_logout_2">
+            <i class="fas fa-message"></i>
+            <span>
+                <h4>Give feedback</h4>
+                <p>Help us improve Facebook</p>
+            </span>
+            <i class="fas fa-angle-right"></i>
+        </div>
+
+        <hr>
+
+        <div id="span_logout_3">
+            <i class="fas fa-gear"></i>
+            <h4>Settings & privacy</h4>
+            <i class="fas fa-angle-right"></i>
+        </div>
+
+        <div id="span_logout_4">
+            <i class="fas fa-question"></i>
+            <h4>Help & support</h4>
+            <i class="fas fa-angle-right"></i>
+        </div>
+
+        <div id="span_logout_5">
+            <i class="fas fa-moon"></i>
+            <h4>Display & accessibility</h4>
+            <i class="fas fa-angle-right"></i>
+        </div>
+
+        <div id="span_logout_6">
+            <i class="fas fa-right-from-bracket"></i>
+            <h4>Log Out</h4>
+        </div>
+
+        <!-- adding arrow with ::after  -->
+        <p>
+            <a href="">Privacy</a>.
+            <a href="">Terms</a>.
+            <a href="">Advertising</a>.
+            <a href="">Ad Choices</a>.
+            <a href="">Cookies</a>.
+            <a href="">More</a>.
+            Meta @ 2022
+        </p>
+    </section>
+
+    <script>
+        // Add personal Data to first choice in the list
+        document.querySelector('#span_logout_1 span h4').innerHTML = getCookie('firstname') + " " + getCookie('surname')
+        document.querySelector('#span_logout_1 img').src = "../" + getCookie('avatar')
+
+        //To Get Data from the cookies
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        document.getElementById('span_logout_6').addEventListener('click', function () {
+            //logout clicked: remove cookies and back to login page
+
+            const d = new Date();
+            d.setTime(d.getTime() - 2 * 24 * 60 * 60 * 1000); //2 days before
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = "username" + "= ;" + expires + ";path=/";
+            document.cookie = "email" + "= ;" + expires + ";path=/";
+            document.cookie = "avatar" + "= ;" + expires + ";path=/";
+            document.cookie = "firstname" + "= ;" + expires + ";path=/";
+            document.cookie = "surname" + "= ;" + expires + ";path=/";
+            document.cookie = "userIndex" + "= ;" + expires + ";path=/";
+
+            //using replace instead of open to clear backstack
+            window.parent.location.replace("http://127.0.0.1:5500/login.html",'_self')
+        })
+
+    </script>
+</body>
+
+</html>
